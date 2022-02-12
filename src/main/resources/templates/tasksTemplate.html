@@ -44,7 +44,7 @@
     </div>
     <div class="row" th:each="task : ${modelTaskList}">
         <div class="col-6">
-            <span th:text="${task.name}"></span>
+            <a th:href="@{/task/} + ${task.id}" th:text="${task.name}" />
         </div>
         <div class="col">
             <span th:text="${task.description}"></span>
