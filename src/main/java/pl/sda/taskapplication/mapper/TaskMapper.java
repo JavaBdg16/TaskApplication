@@ -36,21 +36,16 @@ public class TaskMapper {
         return result;
     }
 
+    /*
+    1. zapisujemy nowego taska - createdAt <-- new Date()
+    2. zapisujemy istniejącego taska - createdAt się nie zmienia
+     */
     public static Task map(TaskDto dto) {
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
         Task task = new Task();
         task.setId(dto.getId());
         task.setName(dto.getName());
         task.setDescription(dto.getDescription());
         task.setType(dto.getType());
-
-        try {
-            task.setCreatedAt(dateFormat.parse(dto.getCreatedAt()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         return task;
     }
