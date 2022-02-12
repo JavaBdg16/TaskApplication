@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/5.1.3/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">TODO Application</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <p class="font-weight-bold">Nazwa zadania</p>
+        </div>
+        <div class="col">
+            <p class="font-weight-bold">Opis</p>
+        </div>
+        <div class="col">
+            <p class="font-weight-bold">Data utworzenia</p>
+        </div>
+    </div>
+    <div class="row" th:each="todo : ${modelTodoList}">
+        <div class="col-6">
+            <span th:text="${todo.name}"></span>
+        </div>
+        <div class="col">
+            <span th:text="${todo.description}"></span>
+        </div>
+        <div class="col">
+            <span th:text="${todo.createDate}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <form class="p-3 bg-light" method="post" th:object="${todo}" th:action="@{/todo}">
+
+            <div class="form-row">
+                <div class="col mb-3">
+                    <label for="name">Nazwa zadania</label>
+                    <input type="text" class="form-control" name="name" id="name" th:value="${todo.name}">
+                    <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('name')}"
+                         th:errors="*{name}"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col mb-3">
+                    <label for="description">Opis zadania</label>
+                    <input type="text" class="form-control" name="description" id="description" th:value="${todo.description}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Zapisz</button>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
