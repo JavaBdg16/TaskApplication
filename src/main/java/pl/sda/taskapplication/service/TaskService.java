@@ -31,11 +31,6 @@ public class TaskService {
 
     public void save(TaskDto taskDto) {
         Task task = TaskMapper.map(taskDto);
-
-        if (taskDto.getId() == 0) {
-            task.setCreatedAt(new Date());
-        }
-
         taskRepository.save(task);
     }
 }
