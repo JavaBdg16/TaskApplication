@@ -18,6 +18,6 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 
     List<Task> findByTypeAndCreatedAtBetween(TaskType taskType, Date start, Date end);
 
-//    @Query("SELECT t FROM Task t INNER JOIN Comment c ON c.task.id = t.id WHERE c.text LIKE :#{searchText}")
-//    List<Task> findByCommentText(String searchText);
+    @Query("SELECT t FROM Task t INNER JOIN Comment c ON c.task.id = t.id WHERE c.text LIKE ?1")
+    List<Task> findByCommentText(String searchText);
 }

@@ -1,27 +1,27 @@
 package pl.sda.taskapplication.controller;
 
-import pl.sda.taskapplication.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sda.taskapplication.repository.TaskRepository;
+import pl.sda.taskapplication.dto.TaskDto;
+import pl.sda.taskapplication.service.TaskService;
 
 import javax.validation.Valid;
-import java.util.Date;
 
 @Controller
 @RequestMapping("/task")
 public class TaskController {
 
-    private TaskRepository taskRepository;
+    private TaskService taskService;
 
     @Autowired
-    public TaskController(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
     }
 
     // wyświetl wszystkie zadania
@@ -29,24 +29,29 @@ public class TaskController {
     // dlaczego "/" psuł????
     @GetMapping
     public String showTasks(Model model) {
-        model.addAttribute("modelTaskList", taskRepository.findAll());
-        model.addAttribute("task", new Task());
+        model.addAttribute("modelTaskList", taskService.getAll());
+        model.addAttribute("task", new TaskDto());
 
+        return "tasksTemplate";
+    }
+
+    @GetMapping("/{id}")
+    public String showTask(@PathVariable("id") long id, Model model) {
+        // TODO
         return "taskTemplate";
     }
 
     // POST /todo
     // stwórz nowe zadanie
     @PostMapping
-    public String createTodo(@Valid Task task, Errors errors, Model model) {
+    public String createTodo(@Valid TaskDto task, Errors errors, Model model) {
         if (errors.hasErrors()) {
-            model.addAttribute("modelTaskList", taskRepository.findAll());
+            model.addAttribute("modelTaskList", taskService.getAll());
             model.addAttribute("task", task);
-            return "taskTemplate";
+            return "tasksTemplate";
         }
 
-        task.setCreatedAt(new Date());
-        taskRepository.save(task);
-        return "redirect:/todo";
+        taskService.save(task);
+        return "redirect:/task";
     }
 }

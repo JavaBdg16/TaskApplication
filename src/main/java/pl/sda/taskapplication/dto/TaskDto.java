@@ -1,29 +1,15 @@
-package pl.sda.taskapplication.entity;
+package pl.sda.taskapplication.dto;
 
-import javax.persistence.*;
+import pl.sda.taskapplication.entity.TaskType;
+
 import java.util.Date;
-import java.util.List;
 
-@Entity
-@Table(name = "Task")
-public class Task {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TaskDto {
     private long id;
-
-    @Column(nullable = false)
     private String name;
-
     private String description;
-
     private TaskType type;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-
-    @OneToMany(mappedBy = "task")
-    private List<Comment> comments;
+    private String createdAt;
 
     public long getId() {
         return id;
@@ -57,19 +43,11 @@ public class Task {
         this.type = type;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
     }
 }
