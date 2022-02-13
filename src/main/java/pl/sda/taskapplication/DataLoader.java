@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 import pl.sda.taskapplication.entity.Comment;
 import pl.sda.taskapplication.entity.Task;
 import pl.sda.taskapplication.entity.TaskType;
+import pl.sda.taskapplication.entity.User;
 import pl.sda.taskapplication.repository.CommentRepository;
 import pl.sda.taskapplication.repository.TaskRepository;
+import pl.sda.taskapplication.repository.UserRepository;
 
 import java.util.Date;
 
@@ -23,8 +25,17 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     private CommentRepository commentRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        User user = new User();
+        user.setUsername("jnowak");
+        user.setPassword("1234");
+
+        userRepository.save(user);
 
         Iterable<Task> tasks = taskRepository.findAll();
         if (!tasks.iterator().hasNext()) {
