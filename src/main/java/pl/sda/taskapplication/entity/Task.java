@@ -3,6 +3,7 @@ package pl.sda.taskapplication.entity;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Task {
     private Date createdAt;
 
     @OneToMany(mappedBy = "task")
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
 
     public long getId() {
         return id;

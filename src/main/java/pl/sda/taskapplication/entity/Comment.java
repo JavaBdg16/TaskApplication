@@ -1,5 +1,7 @@
 package pl.sda.taskapplication.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,9 +12,10 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = Integer.MAX_VALUE)
     private String text;
 
+    @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
@@ -48,5 +51,7 @@ public class Comment {
         return task;
     }
 
-
+    public void setTask(Task task) {
+        this.task = task;
+    }
 }

@@ -3,6 +3,7 @@ package pl.sda.taskapplication.dto;
 import pl.sda.taskapplication.entity.TaskType;
 
 import java.util.Date;
+import java.util.List;
 
 public class TaskDto {
     private long id;
@@ -10,6 +11,7 @@ public class TaskDto {
     private String description;
     private TaskType type;
     private String createdAt;
+    private List<CommentDto> comments;
 
     public long getId() {
         return id;
@@ -49,5 +51,13 @@ public class TaskDto {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public List<CommentDto> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDto> comments) {
+        this.comments = comments;
     }
 }

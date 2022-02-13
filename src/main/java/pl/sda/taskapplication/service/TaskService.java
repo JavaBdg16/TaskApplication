@@ -9,6 +9,7 @@ import pl.sda.taskapplication.repository.TaskRepository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class TaskService {
@@ -32,5 +33,12 @@ public class TaskService {
     public void save(TaskDto taskDto) {
         Task task = TaskMapper.map(taskDto);
         taskRepository.save(task);
+    }
+
+    public TaskDto findById(long id) {
+        Task task = taskRepository.findById(id).orElseThrow(() -> new NoSuchElementException());
+        TaskDto taskDto = TaskMapper.map(task);
+
+        return taskDto;
     }
 }

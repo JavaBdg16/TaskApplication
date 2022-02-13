@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html :: header"></head>
+<body>
+<nav th:replace="fragments/navbar.html :: navbar"></nav>
+
+<div class="container">
+    <!-- id -->
+
+    <div class="row">
+        <div class="col-8">
+            <!-- name -->
+            <h4 th:text="${task.name}"  />
+        </div>
+        <div class="col-2">
+            <!-- type -->
+            <span th:text="${task.type}" />
+        </div>
+        <div class="col-2">
+            <!-- created at -->
+            <span th:text="${task.createdAt}" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- description -->
+            <span th:text="${task.description}" />
+        </div>
+    </div>
+    <div class="row" th:each="comment : ${task.comments}">
+        <div class="col">
+            <!-- comments -->
+            <span th:text="${comment.text}" />
+        </div>
+    </div>
+    <div class="row">
+        <form class="p-3 bg-light" method="post" th:object="${comment}" th:action="@{/comment}">
+            <div class="form-row">
+                <div class="col mb-3">
+                    <label for="text">Dodaj komentarz</label>
+                    <input type="text" class="form-control" name="text" id="text">
+                </div>
+            </div>
+            <input type="hidden" name="taskId" th:value="${task.id}" />
+            <button type="submit" class="btn btn-primary">Dodaj</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

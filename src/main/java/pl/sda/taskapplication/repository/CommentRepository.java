@@ -1,9 +1,7 @@
 package pl.sda.taskapplication.repository;
 
-import pl.sda.taskapplication.entity.Comment;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import pl.sda.taskapplication.entity.Comment;
 
-@Repository
 public interface CommentRepository extends CrudRepository<Comment, Long> {
 }

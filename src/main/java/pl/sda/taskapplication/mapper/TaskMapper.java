@@ -22,6 +22,7 @@ public class TaskMapper {
         dto.setName(task.getName());
         dto.setType(task.getType());
         dto.setCreatedAt(dateFormat.format(task.getCreatedAt()));
+        dto.setComments(CommentMapper.map(task.getComments()));
 
         return dto;
     }
