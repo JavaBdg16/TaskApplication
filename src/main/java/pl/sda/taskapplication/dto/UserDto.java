@@ -8,23 +8,18 @@ import javax.validation.constraints.NotNull;
 @PasswordEqualConstraint(message = "Wpisane hasła nie są takie same")
 public class UserDto {
 
-    @NotNull
     @NotEmpty
     private String username;
 
-    @NotNull
     @NotEmpty
     private String password;
 
-    @NotNull
     @NotEmpty
     private String retypePassword;
 
-    @NotNull
     @NotEmpty
     private String firstName;
 
-    @NotNull
     @NotEmpty
     private String lastName;
     private String street;
