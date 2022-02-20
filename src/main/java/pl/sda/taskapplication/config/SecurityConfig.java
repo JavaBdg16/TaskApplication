@@ -51,7 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.logout().logoutSuccessUrl("/goodbye");
 
-
         // why ** ?
         http.csrf().ignoringAntMatchers("/h2-console/**")
                 // umożliwia wczytywanie stron w ramkach
