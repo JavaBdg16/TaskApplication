@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments/head.html :: header"></head>
+<body>
+<nav th:replace="fragments/navbar.html :: navbar"></nav>
+
+<form class="p-3 bg-light" method="post" th:object="${user}" th:action="@{/register}">
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="username">Nazwa użytkownika</label>
+            <input type="text" class="form-control" name="username" id="username" th:value="${user.username}">
+            <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('username')}"
+                 th:errors="*{username}"></div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="password">Hasło</label>
+            <input type="password" class="form-control" name="password" id="password">
+            <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('password')}"
+                 th:errors="*{password}"></div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="firstName">Imię</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" th:value="${user.firstName}">
+            <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('firstName')}"
+                 th:errors="*{firstName}"></div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="lastName">Nazwisko</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" th:value="${user.lastName}">
+            <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('lastName')}"
+                 th:errors="*{lastName}"></div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="street">Ulica</label>
+            <input type="text" class="form-control" name="street" id="street" th:value="${user.street}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="city">Miasto</label>
+            <input type="text" class="form-control" name="city" id="city" th:value="${user.city}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="zip">Kod pocztowy</label>
+            <input type="text" class="form-control" name="zip" id="zip" th:value="${user.zip}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="phoneNumber">Numer telefonu</label>
+            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" th:value="${user.phoneNumber}">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Zarejestruj</button>
+</form>
+
+</body>
+</html>
