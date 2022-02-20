@@ -24,6 +24,7 @@ public class Task {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(updatable = false, nullable = false)
     private Date createdAt;
 
     @OneToMany(mappedBy = "task")

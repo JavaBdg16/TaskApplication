@@ -59,6 +59,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers()
                 .frameOptions()
                 .sameOrigin();
+
+        // TODO: why???
+        http.cors().and().csrf().disable();
     }
 
     private void setupInMemoryAuthentication(AuthenticationManagerBuilder auth) throws Exception {
