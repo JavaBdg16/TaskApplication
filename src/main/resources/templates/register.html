@@ -27,6 +27,17 @@
     </div>
     <div class="form-row">
         <div class="form-group col">
+            <label for="retypePassword">Powtórz Hasło</label>
+            <input type="password" class="form-control" name="retypePassword" id="retypePassword">
+            `<div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('retypePassword')}"
+                 th:errors="*{retypePassword}"></div>
+            <!-- TODO -->
+<!--            <div class="invalid-feedback" style="display: block" th:if="${#objects.hasErrors('retypePassword')}"-->
+<!--                 th:errors="*{retypePassword}"></div>-->
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
             <label for="firstName">Imię</label>
             <input type="text" class="form-control" name="firstName" id="firstName" th:value="${user.firstName}">
             <div class="invalid-feedback" style="display: block" th:if="${#fields.hasErrors('firstName')}"

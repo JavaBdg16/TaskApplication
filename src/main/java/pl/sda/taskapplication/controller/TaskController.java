@@ -2,6 +2,9 @@ package pl.sda.taskapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -12,9 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 import pl.sda.taskapplication.dto.CommentDto;
 import pl.sda.taskapplication.dto.TaskDto;
+import pl.sda.taskapplication.dto.UserDto;
+import pl.sda.taskapplication.entity.User;
 import pl.sda.taskapplication.service.TaskService;
+import pl.sda.taskapplication.service.UserService;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.NoSuchElementException;
 
 @Controller
@@ -22,17 +29,22 @@ import java.util.NoSuchElementException;
 public class TaskController {
 
     private TaskService taskService;
+    private UserService userService;
 
     @Autowired
-    public TaskController(TaskService taskService) {
+    public TaskController(TaskService taskService, UserService userService) {
         this.taskService = taskService;
+        this.userService = userService;
     }
 
     // wyświetl wszystkie zadania
     // GET localhost:8080/task
     // dlaczego "/" psuł????
     @GetMapping
-    public String showTasks(Model model) {
+    public String showTasks(Model model/*, @AuthenticationPrincipal User user */) {
+
+        // UserDto userDto = userService.getUserByUsername(principal.getName());
+
         model.addAttribute("modelTaskList", taskService.getAll());
 
         return "tasksTemplate";

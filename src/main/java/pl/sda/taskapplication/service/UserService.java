@@ -23,4 +23,9 @@ public class UserService {
 
         return user.getId() != 0;
     }
+
+    public UserDto getUserByUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        return UserMapper.map(user);
+    }
 }

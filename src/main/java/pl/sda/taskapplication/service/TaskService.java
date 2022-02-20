@@ -1,9 +1,12 @@
 package pl.sda.taskapplication.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import pl.sda.taskapplication.dto.TaskDto;
 import pl.sda.taskapplication.entity.Task;
+import pl.sda.taskapplication.entity.User;
 import pl.sda.taskapplication.mapper.TaskMapper;
 import pl.sda.taskapplication.repository.TaskRepository;
 
@@ -32,6 +35,13 @@ public class TaskService {
 
     public void save(TaskDto taskDto) {
         Task task = TaskMapper.map(taskDto);
+
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+
+        // task.setUser(user);
+
         taskRepository.save(task);
     }
 

@@ -15,4 +15,17 @@ public class UserMapper {
         user.setLastName(userDto.getLastName());
         return user;
     }
+
+    public static UserDto map(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setUsername(user.getUsername());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setCity(user.getCity());
+        userDto.setStreet(user.getStreet());
+        userDto.setZip(user.getZip());
+        userDto.setPhoneNumber(user.getPhoneNumber());
+
+        return userDto;
+    }
 }

@@ -1,8 +1,11 @@
 package pl.sda.taskapplication.dto;
 
+import pl.sda.taskapplication.validation.PasswordEqualConstraint;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+@PasswordEqualConstraint(message = "Wpisane hasła nie są takie same")
 public class UserDto {
 
     @NotNull
@@ -13,7 +16,9 @@ public class UserDto {
     @NotEmpty
     private String password;
 
-    // private String retypePassword;
+    @NotNull
+    @NotEmpty
+    private String retypePassword;
 
     @NotNull
     @NotEmpty
@@ -41,6 +46,14 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRetypePassword() {
+        return retypePassword;
+    }
+
+    public void setRetypePassword(String retypePassword) {
+        this.retypePassword = retypePassword;
     }
 
     public String getFirstName() {

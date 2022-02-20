@@ -32,6 +32,7 @@ public class UserController {
         // TODO: dlaczego nie pokazują się błędy?????
         if (errors.hasErrors()) {
             // model.addAttribute("user", user);
+            // TODO: show validation error
             return "register";
         }
 
