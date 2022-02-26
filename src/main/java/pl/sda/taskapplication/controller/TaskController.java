@@ -2,9 +2,6 @@ package pl.sda.taskapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -15,13 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 import pl.sda.taskapplication.dto.CommentDto;
 import pl.sda.taskapplication.dto.TaskDto;
-import pl.sda.taskapplication.dto.UserDto;
-import pl.sda.taskapplication.entity.User;
 import pl.sda.taskapplication.service.TaskService;
 import pl.sda.taskapplication.service.UserService;
 
 import javax.validation.Valid;
-import java.security.Principal;
 import java.util.NoSuchElementException;
 
 @Controller
@@ -81,7 +75,7 @@ public class TaskController {
             return "taskCreate";
         }
 
-        taskService.save(task);
+        taskService.create(task);
         return "redirect:/task";
     }
 }

@@ -51,23 +51,27 @@ public class TaskRestController {
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public TaskDto postTask(@RequestBody TaskDto taskDto) {
-        return taskService.save(taskDto);
+        return taskService.create(taskDto);
     }
 
     // HTTP PUT
     // /api/task/{id} --> aktualizuje task o konrektrnym id
 
     @PutMapping("/{id}")
-    public TaskDto putTask(@RequestBody TaskDto taskDto) {
-        return taskService.save(taskDto);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void putTask(@PathVariable("id") long id, @RequestBody TaskDto taskDto) {
+        taskDto.setId(id);
+        taskService.update(taskDto);
     }
 
     // HTTP PATCH
     // /api/task/{id} --> aktualizuje task o konrektrnym id
 
     @PatchMapping("/{id}")
-    public TaskDto patchTask(@PathVariable("id") long id, @RequestBody TaskDto taskDto) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void patchTask(@PathVariable("id") long id, @RequestBody TaskDto taskDto) {
         TaskDto saved = taskService.findById(id);
+        taskDto.setId(id);
 
 //        if (!taskDto.getDescription().equals(saved.getDescription())) {
 //            saved.setDescription(taskDto.getDescription());
@@ -85,7 +89,7 @@ public class TaskRestController {
             saved.setType(taskDto.getType());
         }
 
-        return taskService.save(saved);
+        taskService.update(saved);
     }
 
     // HTTP DELETE

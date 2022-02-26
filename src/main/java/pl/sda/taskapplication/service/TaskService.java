@@ -1,9 +1,11 @@
 package pl.sda.taskapplication.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import pl.sda.taskapplication.dto.TaskDto;
 import pl.sda.taskapplication.entity.Task;
 import pl.sda.taskapplication.entity.User;
@@ -35,7 +37,7 @@ public class TaskService {
         return taskDtos;
     }
 
-    public TaskDto save(TaskDto taskDto) {
+    public TaskDto create(TaskDto taskDto) {
         Task task = TaskMapper.map(taskDto);
 
 //        Authentication authentication =
@@ -44,16 +46,20 @@ public class TaskService {
 
         // task.setUser(user);
 
-        // TODO: fix it!!!!!!!
-        Optional<Task> task2 = taskRepository.findById(task.getId());
-        if (task2.isPresent()) {
-            Date ldt = task2.get().getCreatedAt();
-            task.setCreatedAt(ldt);
-        }
-
         task = taskRepository.save(task);
 
         return TaskMapper.map(task);
+    }
+
+    public void update(TaskDto taskDto) {
+
+        if (taskDto.getId() == 0 || !taskRepository.existsById(taskDto.getId())) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        Task task = TaskMapper.map(taskDto);
+
+        taskRepository.save(task);
     }
 
     public TaskDto findById(long id) {
