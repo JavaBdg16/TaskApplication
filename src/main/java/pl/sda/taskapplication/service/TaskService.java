@@ -29,7 +29,8 @@ public class TaskService {
     }
 
     public List<TaskDto> getAll() {
-        Iterable<Task> tasks = taskRepository.findAll();
+        User user = getLoggedInUser();
+        Iterable<Task> tasks = taskRepository.findTasksByUser(user);
 
         // Optional business logic
 
@@ -39,12 +40,8 @@ public class TaskService {
 
     public TaskDto create(TaskDto taskDto) {
         Task task = TaskMapper.map(taskDto);
-
-//        Authentication authentication =
-//                SecurityContextHolder.getContext().getAuthentication();
-//        User user = (User) authentication.getPrincipal();
-
-        // task.setUser(user);
+        User user = getLoggedInUser();
+        task.setUser(user);
 
         task = taskRepository.save(task);
 
@@ -71,5 +68,12 @@ public class TaskService {
 
     public void delete(long id) {
         taskRepository.deleteById(id);
+    }
+
+    private User getLoggedInUser() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+        return user;
     }
 }

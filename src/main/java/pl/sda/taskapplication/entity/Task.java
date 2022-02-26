@@ -27,6 +27,10 @@ public class Task {
     @Column(updatable = false, nullable = false)
     private Date createdAt;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
     @OneToMany(mappedBy = "task")
     private List<Comment> comments = new ArrayList<>();
 
@@ -76,5 +80,13 @@ public class Task {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

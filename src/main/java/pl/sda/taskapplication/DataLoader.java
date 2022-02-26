@@ -34,22 +34,27 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        createData("jnowak");
+        createData("akowal");
+    }
 
+    private void createData(String username) {
         User user = new User();
-        user.setUsername("jnowak");
+        user.setUsername(username);
         user.setPassword(passwordEncoder.encode("1234"));
 
-        userRepository.save(user);
+        user = userRepository.save(user);
 
-        Iterable<Task> tasks = taskRepository.findAll();
+        Iterable<Task> tasks = taskRepository.findTasksByUser(user);
         if (!tasks.iterator().hasNext()) {
 
             for (int i = 1; i <= 10; i++) {
                 Task task = new Task();
-                task.setName("Zadanie nr " + i);
+                task.setName(user.getUsername() + " Zadanie nr " + i);
                 task.setDescription("Opis zadania nr " + i);
                 task.setCreatedAt(new Date());
                 task.setType(TaskType.TASK);
+                task.setUser(user);
                 task = taskRepository.save(task);
 
                 for (int j = 1; j <= 5; j++) {
@@ -61,8 +66,6 @@ public class DataLoader implements ApplicationRunner {
 
                     // task.getComments().add(comment);
                 }
-
-
             }
         }
     }

@@ -5,12 +5,16 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import pl.sda.taskapplication.entity.Task;
 import pl.sda.taskapplication.entity.TaskType;
+import pl.sda.taskapplication.entity.User;
 
 import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
+
+    // pobierz zadania użytkownika
+    List<Task> findTasksByUser(User user);
 
     // pobierz zadania o określony typie
     // słowo Tasks jest opcjonalne
