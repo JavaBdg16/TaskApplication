@@ -1,0 +1,74 @@
+2022-02-26 14:45:16.333  INFO 32554 --- [main] pl.sda.taskapplication.TaskApplication   : Starting TaskApplication using Java 11.0.11 on MacBook-Pro-Marcin.local with PID 32554 (/Users/mszupke/Workspace/sda/javabdg16/TaskApplication/target/classes started by mszupke in /Users/mszupke/Workspace/sda/javabdg16/TaskApplication)
+2022-02-26 14:45:16.336  INFO 32554 --- [main] pl.sda.taskapplication.TaskApplication   : No active profile set, falling back to default profiles: default
+2022-02-26 14:45:17.599  INFO 32554 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-26 14:45:17.661  INFO 32554 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2022-02-26 14:45:18.598  INFO 32554 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-26 14:45:18.609  INFO 32554 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-26 14:45:18.609  INFO 32554 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 14:45:18.706  INFO 32554 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-26 14:45:18.706  INFO 32554 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2301 ms
+2022-02-26 14:45:18.747  INFO 32554 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-26 14:45:18.908  INFO 32554 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-26 14:45:18.923  INFO 32554 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:taskdb'
+2022-02-26 14:45:19.134  INFO 32554 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-26 14:45:19.179  INFO 32554 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-26 14:45:19.326  INFO 32554 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-26 14:45:19.429  INFO 32554 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-02-26 14:45:20.150  INFO 32554 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-26 14:45:20.157  INFO 32554 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 14:45:20.675  WARN 32554 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-26 14:45:21.293  INFO 32554 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-26 14:45:21.421  INFO 32554 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d0e6424, org.springframework.security.web.context.SecurityContextPersistenceFilter@53cb9b1, org.springframework.security.web.header.HeaderWriterFilter@1cdb280b, org.springframework.web.filter.CorsFilter@6da86e98, org.springframework.security.web.authentication.logout.LogoutFilter@321558f8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36bd07ec, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1013aa94, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61e34bec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54d9b23a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a5024eb, org.springframework.security.web.session.SessionManagementFilter@3f8a44a4, org.springframework.security.web.access.ExceptionTranslationFilter@726dd367, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c0bf8f4]
+2022-02-26 14:45:21.757  INFO 32554 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-26 14:45:21.759  INFO 32554 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-02-26 14:45:21.783  INFO 32554 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-02-26 14:45:21.831  INFO 32554 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-02-26 14:45:22.003  INFO 32554 --- [main] pl.sda.taskapplication.TaskApplication   : Started TaskApplication in 6.083 seconds (JVM running for 6.927)
+2022-02-26 14:46:11.102  INFO 32554 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-26 14:46:11.105  INFO 32554 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-26 14:46:11.121  INFO 32554 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2022-02-26 14:46:16.389  INFO 32554 --- [http-nio-8080-exec-4] doLogging                                : :: start getAll ::
+2022-02-26 14:46:16.442  WARN 32554 --- [http-nio-8080-exec-4] doLogging                                : [pl.sda.taskapplication.dto.TaskDto@6f4e58c, pl.sda.taskapplication.dto.TaskDto@3dddd57c, pl.sda.taskapplication.dto.TaskDto@13eb73b5, pl.sda.taskapplication.dto.TaskDto@33c37bd8, pl.sda.taskapplication.dto.TaskDto@12ba30a9, pl.sda.taskapplication.dto.TaskDto@411f71b7, pl.sda.taskapplication.dto.TaskDto@921c4fa, pl.sda.taskapplication.dto.TaskDto@219473bd, pl.sda.taskapplication.dto.TaskDto@6268305e, pl.sda.taskapplication.dto.TaskDto@58c0776d]
+2022-02-26 14:46:16.442  INFO 32554 --- [http-nio-8080-exec-4] doLogging                                : :: end ::
+2022-02-26 14:48:31.701  INFO 32554 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 14:48:31.710  INFO 32554 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-02-26 14:48:31.751  INFO 32554 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-26 14:48:31.764  INFO 32554 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-26 14:48:40.017  INFO 32676 --- [main] pl.sda.taskapplication.TaskApplication   : Starting TaskApplication using Java 11.0.11 on MacBook-Pro-Marcin.local with PID 32676 (/Users/mszupke/Workspace/sda/javabdg16/TaskApplication/target/classes started by mszupke in /Users/mszupke/Workspace/sda/javabdg16/TaskApplication)
+2022-02-26 14:48:40.021  INFO 32676 --- [main] pl.sda.taskapplication.TaskApplication   : No active profile set, falling back to default profiles: default
+2022-02-26 14:48:41.163  INFO 32676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-26 14:48:41.217  INFO 32676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2022-02-26 14:48:42.002  INFO 32676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-26 14:48:42.011  INFO 32676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-26 14:48:42.011  INFO 32676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 14:48:42.101  INFO 32676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-26 14:48:42.102  INFO 32676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2018 ms
+2022-02-26 14:48:42.138  INFO 32676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-26 14:48:42.262  INFO 32676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-26 14:48:42.275  INFO 32676 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:taskdb'
+2022-02-26 14:48:42.399  INFO 32676 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-26 14:48:42.442  INFO 32676 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-26 14:48:42.600  INFO 32676 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-26 14:48:42.689  INFO 32676 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-02-26 14:48:43.321  INFO 32676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-26 14:48:43.330  INFO 32676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 14:48:43.832  WARN 32676 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-26 14:48:44.354  INFO 32676 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-26 14:48:44.476  INFO 32676 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46e38c28, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f579582, org.springframework.security.web.header.HeaderWriterFilter@1f4b8027, org.springframework.web.filter.CorsFilter@3c7f8c25, org.springframework.security.web.authentication.logout.LogoutFilter@76641439, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a7427f9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6d5fea64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69346100, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d76d72a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4110ffe5, org.springframework.security.web.session.SessionManagementFilter@769b1d1c, org.springframework.security.web.access.ExceptionTranslationFilter@4e8b36af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75d61b62]
+2022-02-26 14:48:44.777  INFO 32676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-26 14:48:44.779  INFO 32676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-02-26 14:48:44.796  INFO 32676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-02-26 14:48:44.828  INFO 32676 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-02-26 14:48:44.992  INFO 32676 --- [main] pl.sda.taskapplication.TaskApplication   : Started TaskApplication in 5.441 seconds (JVM running for 7.493)
+2022-02-26 14:49:02.221  INFO 32676 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-26 14:49:02.222  INFO 32676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-26 14:49:02.224  INFO 32676 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-26 14:49:06.845  INFO 32676 --- [http-nio-8080-exec-4] doLogging                                : :: start getAll ::
+2022-02-26 14:49:06.891  INFO 32676 --- [http-nio-8080-exec-4] doLogging                                : Method getAll execution lasted: 40 ms
+2022-02-26 14:49:06.893  INFO 32676 --- [http-nio-8080-exec-4] doLogging                                : Method getAll execution ended at: Sat Feb 26 14:49:06 CET 2022
+2022-02-26 14:49:06.894  WARN 32676 --- [http-nio-8080-exec-4] doLogging                                : [pl.sda.taskapplication.dto.TaskDto@3f4b5062, pl.sda.taskapplication.dto.TaskDto@5d774aaf, pl.sda.taskapplication.dto.TaskDto@f0e20e4, pl.sda.taskapplication.dto.TaskDto@367633e2, pl.sda.taskapplication.dto.TaskDto@53dbbd0e, pl.sda.taskapplication.dto.TaskDto@341ea7e8, pl.sda.taskapplication.dto.TaskDto@4a69b88f, pl.sda.taskapplication.dto.TaskDto@4d076b03, pl.sda.taskapplication.dto.TaskDto@43ba9c60, pl.sda.taskapplication.dto.TaskDto@2da4218]
+2022-02-26 14:49:06.894  INFO 32676 --- [http-nio-8080-exec-4] doLogging                                : :: end ::
+2022-02-26 14:49:27.440  INFO 32676 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 14:49:27.444  INFO 32676 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-02-26 14:49:27.465  INFO 32676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-26 14:49:27.473  INFO 32676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
