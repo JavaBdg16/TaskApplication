@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.sda.taskapplication.dto.TaskDto;
 import pl.sda.taskapplication.service.TaskService;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -23,7 +24,7 @@ public class TaskRestController {
     // /api/task --> zwraca wszystkie task
 
     @GetMapping
-    public List<TaskDto> getTasks() {
+    public List<TaskDto> getTasks(Principal principal) {
         return taskService.getAll();
     }
 
