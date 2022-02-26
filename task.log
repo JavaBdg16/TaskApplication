@@ -72,3 +72,98 @@
 2022-02-26 14:49:27.444  INFO 32676 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-02-26 14:49:27.465  INFO 32676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-02-26 14:49:27.473  INFO 32676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-26 15:11:29.682  INFO 32996 --- [main] pl.sda.taskapplication.TaskApplication   : Starting TaskApplication using Java 11.0.11 on MacBook-Pro-Marcin.local with PID 32996 (/Users/mszupke/Workspace/sda/javabdg16/TaskApplication/target/classes started by mszupke in /Users/mszupke/Workspace/sda/javabdg16/TaskApplication)
+2022-02-26 15:11:29.688  INFO 32996 --- [main] pl.sda.taskapplication.TaskApplication   : No active profile set, falling back to default profiles: default
+2022-02-26 15:11:31.350  INFO 32996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-26 15:11:31.454  INFO 32996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2022-02-26 15:11:32.537  INFO 32996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-26 15:11:32.548  INFO 32996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-26 15:11:32.549  INFO 32996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 15:11:32.646  INFO 32996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-26 15:11:32.646  INFO 32996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2753 ms
+2022-02-26 15:11:32.689  INFO 32996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-26 15:11:32.864  INFO 32996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-26 15:11:32.875  INFO 32996 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:taskdb'
+2022-02-26 15:11:33.056  INFO 32996 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-26 15:11:33.114  INFO 32996 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-26 15:11:33.262  INFO 32996 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-26 15:11:33.374  INFO 32996 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-02-26 15:11:34.087  INFO 32996 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-26 15:11:34.097  INFO 32996 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 15:11:34.663  WARN 32996 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-26 15:11:35.344  INFO 32996 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-26 15:11:35.470  INFO 32996 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ad4ef13, org.springframework.security.web.context.SecurityContextPersistenceFilter@790ea58f, org.springframework.security.web.header.HeaderWriterFilter@3cf1b5fb, org.springframework.web.filter.CorsFilter@29280ca6, org.springframework.security.web.authentication.logout.LogoutFilter@682482ee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ae91bcc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4f63909f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@410e043b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16eb01d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c7a4986, org.springframework.security.web.session.SessionManagementFilter@7be85f15, org.springframework.security.web.access.ExceptionTranslationFilter@15d68a50, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e5df971]
+2022-02-26 15:11:35.823  INFO 32996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-26 15:11:35.825  INFO 32996 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-02-26 15:11:35.843  INFO 32996 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-02-26 15:11:35.881  INFO 32996 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-02-26 15:11:36.045  INFO 32996 --- [main] pl.sda.taskapplication.TaskApplication   : Started TaskApplication in 6.909 seconds (JVM running for 8.105)
+2022-02-26 15:11:51.864  INFO 32996 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-26 15:11:51.865  INFO 32996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-26 15:11:51.870  INFO 32996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-02-26 15:12:04.337  INFO 32996 --- [http-nio-8080-exec-4] doLogging                                : :: start getAll ::
+2022-02-26 15:12:07.703  INFO 32996 --- [http-nio-8080-exec-4] doLogging                                : Method getAll execution lasted: 3326 ms
+2022-02-26 15:12:07.710  INFO 32996 --- [http-nio-8080-exec-4] doLogging                                : Method getAll execution ended at: Sat Feb 26 15:12:07 CET 2022
+2022-02-26 15:12:07.711  WARN 32996 --- [http-nio-8080-exec-4] doLogging                                : [pl.sda.taskapplication.dto.TaskDto@4e217beb, pl.sda.taskapplication.dto.TaskDto@c88ed18, pl.sda.taskapplication.dto.TaskDto@277d2958, pl.sda.taskapplication.dto.TaskDto@4104b093, pl.sda.taskapplication.dto.TaskDto@4bf657b, pl.sda.taskapplication.dto.TaskDto@4f94a8d9, pl.sda.taskapplication.dto.TaskDto@16d6f9a, pl.sda.taskapplication.dto.TaskDto@6589c70c, pl.sda.taskapplication.dto.TaskDto@1ae2e27b, pl.sda.taskapplication.dto.TaskDto@705a439e]
+2022-02-26 15:12:07.711  INFO 32996 --- [http-nio-8080-exec-4] doLogging                                : :: end ::
+2022-02-26 15:13:12.761  WARN 32996 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s423ms).
+2022-02-26 15:14:42.436  WARN 32996 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m28s593ms).
+2022-02-26 15:15:08.508  INFO 32996 --- [http-nio-8080-exec-7] doLogging                                : :: start create ::
+2022-02-26 15:15:08.531  INFO 32996 --- [http-nio-8080-exec-7] doLogging                                : Method create execution lasted: 22 ms
+2022-02-26 15:15:08.532  INFO 32996 --- [http-nio-8080-exec-7] doLogging                                : Method create execution ended at: Sat Feb 26 15:15:08 CET 2022
+2022-02-26 15:15:08.532  WARN 32996 --- [http-nio-8080-exec-7] doLogging                                : pl.sda.taskapplication.dto.TaskDto@27529087
+2022-02-26 15:15:08.532  INFO 32996 --- [http-nio-8080-exec-7] doLogging                                : :: end ::
+2022-02-26 15:15:08.620  INFO 32996 --- [http-nio-8080-exec-9] doLogging                                : :: start getAll ::
+2022-02-26 15:15:08.689  INFO 32996 --- [http-nio-8080-exec-9] doLogging                                : Method getAll execution lasted: 68 ms
+2022-02-26 15:15:08.690  INFO 32996 --- [http-nio-8080-exec-9] doLogging                                : Method getAll execution ended at: Sat Feb 26 15:15:08 CET 2022
+2022-02-26 15:15:08.691  WARN 32996 --- [http-nio-8080-exec-9] doLogging                                : [pl.sda.taskapplication.dto.TaskDto@28273224, pl.sda.taskapplication.dto.TaskDto@22234a7d, pl.sda.taskapplication.dto.TaskDto@350e9b7, pl.sda.taskapplication.dto.TaskDto@48d76590, pl.sda.taskapplication.dto.TaskDto@59f0d8bc, pl.sda.taskapplication.dto.TaskDto@61b8015d, pl.sda.taskapplication.dto.TaskDto@65a1418c, pl.sda.taskapplication.dto.TaskDto@1629534d, pl.sda.taskapplication.dto.TaskDto@49c35c0c, pl.sda.taskapplication.dto.TaskDto@68d01e80, pl.sda.taskapplication.dto.TaskDto@7129f37]
+2022-02-26 15:15:08.691  INFO 32996 --- [http-nio-8080-exec-9] doLogging                                : :: end ::
+2022-02-26 15:16:03.453  WARN 32996 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s499ms).
+2022-02-26 15:16:29.318  INFO 32996 --- [http-nio-8080-exec-2] doLogging                                : :: start create ::
+2022-02-26 15:16:29.337  INFO 32996 --- [http-nio-8080-exec-2] doLogging                                : Method create execution lasted: 18 ms
+2022-02-26 15:16:29.337  INFO 32996 --- [http-nio-8080-exec-2] doLogging                                : Method create execution ended at: Sat Feb 26 15:16:29 CET 2022
+2022-02-26 15:16:29.337  WARN 32996 --- [http-nio-8080-exec-2] doLogging                                : pl.sda.taskapplication.dto.TaskDto@2dc44f68
+2022-02-26 15:16:29.337  INFO 32996 --- [http-nio-8080-exec-2] doLogging                                : :: end ::
+2022-02-26 15:24:34.282  INFO 32996 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 15:24:34.300  INFO 32996 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-02-26 15:24:34.347  INFO 32996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-26 15:24:34.360  INFO 32996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-26 15:24:39.615  INFO 33095 --- [main] pl.sda.taskapplication.TaskApplication   : Starting TaskApplication using Java 11.0.11 on MacBook-Pro-Marcin.local with PID 33095 (/Users/mszupke/Workspace/sda/javabdg16/TaskApplication/target/classes started by mszupke in /Users/mszupke/Workspace/sda/javabdg16/TaskApplication)
+2022-02-26 15:24:39.619  INFO 33095 --- [main] pl.sda.taskapplication.TaskApplication   : No active profile set, falling back to default profiles: default
+2022-02-26 15:24:40.569  INFO 33095 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-26 15:24:40.622  INFO 33095 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2022-02-26 15:24:41.342  INFO 33095 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-26 15:24:41.351  INFO 33095 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-26 15:24:41.351  INFO 33095 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-26 15:24:41.445  INFO 33095 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-26 15:24:41.445  INFO 33095 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1760 ms
+2022-02-26 15:24:41.480  INFO 33095 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-26 15:24:41.604  INFO 33095 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-26 15:24:41.616  INFO 33095 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:taskdb'
+2022-02-26 15:24:41.759  INFO 33095 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-26 15:24:41.798  INFO 33095 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-02-26 15:24:41.922  INFO 33095 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-26 15:24:42.014  INFO 33095 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-02-26 15:24:42.904  INFO 33095 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-26 15:24:42.917  INFO 33095 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 15:24:43.951  WARN 33095 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-26 15:24:44.712  INFO 33095 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-26 15:24:44.877  INFO 33095 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f26fc4d, org.springframework.security.web.context.SecurityContextPersistenceFilter@78723798, org.springframework.security.web.header.HeaderWriterFilter@7bc3c59f, org.springframework.web.filter.CorsFilter@3e8eea59, org.springframework.security.web.authentication.logout.LogoutFilter@427c2c96, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@69efdfd9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27c49f54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35d62807, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2bf2523f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fb379e4, org.springframework.security.web.session.SessionManagementFilter@1454339d, org.springframework.security.web.access.ExceptionTranslationFilter@55b78dad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7be85f15]
+2022-02-26 15:24:45.260  INFO 33095 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-26 15:24:45.262  INFO 33095 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-02-26 15:24:45.283  INFO 33095 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-02-26 15:24:45.327  INFO 33095 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-02-26 15:24:45.532  INFO 33095 --- [main] pl.sda.taskapplication.TaskApplication   : Started TaskApplication in 6.302 seconds (JVM running for 7.408)
+2022-02-26 15:24:53.741  INFO 33095 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-26 15:24:53.742  INFO 33095 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-26 15:24:53.744  INFO 33095 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-26 15:24:54.126  INFO 33095 --- [http-nio-8080-exec-1] PostMappingLogger                        : POST /api/task Payload taskDto: pl.sda.taskapplication.dto.TaskDto@5dac2e97, 
+2022-02-26 15:24:54.132  INFO 33095 --- [http-nio-8080-exec-1] doLogging                                : :: start create ::
+2022-02-26 15:24:54.145  INFO 33095 --- [http-nio-8080-exec-1] doLogging                                : Method create execution lasted: 8 ms
+2022-02-26 15:24:54.146  INFO 33095 --- [http-nio-8080-exec-1] doLogging                                : Method create execution ended at: Sat Feb 26 15:24:54 CET 2022
+2022-02-26 15:24:54.146  WARN 33095 --- [http-nio-8080-exec-1] doLogging                                : pl.sda.taskapplication.dto.TaskDto@3fd23588
+2022-02-26 15:24:54.146  INFO 33095 --- [http-nio-8080-exec-1] doLogging                                : :: end ::
+2022-02-26 15:28:13.359  INFO 33095 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-26 15:28:13.365  INFO 33095 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-02-26 15:28:13.387  INFO 33095 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-26 15:28:13.393  INFO 33095 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
